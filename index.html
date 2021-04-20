@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ㅎ</title>
+        <title>테스트</title>
+        <script src="csvjson.js"></script>
         <script src="dashClock.js"></script>
-        <script src="csvObject.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div>
-            <a id="dash_clock">가축</a>
+            <a id="dash_clock">나를 바꿔</a>
         </div>
         <script>
             let nodes = Object.keys(timezone).map((x) => {
                 return dcNode(x, timezone[x]);
             });
+
+            nodes = csvjson.map((x) => dcNode(x["TZ database name"], x["TZ database name"]));
 
             dashClock("dash_clock", nodes);
         </script>

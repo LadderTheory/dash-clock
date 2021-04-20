@@ -1,4 +1,4 @@
-csvdata = `Country code,"Latitude, longitude ±DDMM(SS)±DDDMM(SS)",TZ database name,Portion of country covered,Status,UTC offset ±hh:mm,UTC DST offset ±hh:mm,Notes
+Country code,"Latitude, longitude ±DDMM(SS)±DDDMM(SS)",TZ database name,Portion of country covered,Status,UTC offset ±hh:mm,UTC DST offset ±hh:mm,Notes
 CI,+0519−00402,Africa/Abidjan,,Canonical,+00:00,+00:00,
 GH,+0533−00013,Africa/Accra,,Canonical,+00:00,+00:00,
 ET,+0902+03842,Africa/Addis_Ababa,,Alias,+03:00,+03:00,Link to Africa/Nairobi
@@ -592,4 +592,4 @@ WS,,US/Samoa,,Deprecated,−11:00,−11:00,Link to Pacific/Pago_Pago
 ,,UTC,,Alias,+00:00,+00:00,Link to Etc/UTC
 RU,,W-SU,,Deprecated,+03:00,+03:00,Link to Europe/Moscow
 ,,WET,,Deprecated,+00:00,+01:00,"Choose a zone that observes WET, such as Europe/Lisbon."
-,,Zulu,,Deprecated,+00:00,+00:00,Link to Etc/UTC`
+,,Zulu,,Deprecated,+00:00,+00:00,Link to Etc/UTC
