@@ -1,13 +1,14 @@
+// add necessary timezones here
 const timezone = {
     zulu: "zulu",
     eastern: "America/New_York",
     new_york: "America/New_York",
     afghanistan: "Asia/Kabul",
     kabul: "Asia/Kabul",
-    bad: "bad",
+    bad: "bad",//test fail on purpose
 };
 
-// a is the title of the specific node, b is the timezone of said node.
+// returns json data that is in the proper format for the dashClock function. a is the title of the specific node, b is the timezone of said node.
 function dcNode(a,b) {
     return {
         title: a,
@@ -15,6 +16,7 @@ function dcNode(a,b) {
     };
 }
 
+// arg is the string value of the timezone. Timezones can be found in the csv file or the csvjson file
 function timeFromZone(arg) {
     let options = {
         timeZone: arg,
@@ -38,14 +40,17 @@ function timeFromZone(arg) {
     return return_value;
 }
 
+// function to update the clocks. use with the setInterval function
 function updateClocks() {
     let clocks = document.getElementsByClassName("clock_cell");
 
+    // no idea why this works, js is weird man
     [].forEach.call(clocks, (x) => {
         x.innerHTML = timeFromZone(x.dataset.timezone);
     })
 }
 
+// replaces an existing element(elementID) with a table. nodes is an array containing timezone data formatted with the dcNode function
 function dashClock(elementID, nodes) {
     let table = document.createElement("table");
     
