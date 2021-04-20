@@ -9,15 +9,18 @@
     <body>
         <div>
             <a id="dash_clock">나를 바꿔</a>
+            <a id="dash_clock2"></a>
         </div>
         <script>
             let nodes = Object.keys(timezone).map((x) => {
                 return dcNode(x, timezone[x]);
             });
 
+            dashClock("dash_clock", nodes);
+
             nodes = csvjson.map((x) => dcNode(x["TZ database name"], x["TZ database name"]));
 
-            dashClock("dash_clock", nodes);
+            dashClock("dash_clock2", nodes);
         </script>
     </body>
 </html>
