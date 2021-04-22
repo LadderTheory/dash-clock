@@ -1,0 +1,10 @@
+.dashClock {
+    text-align: center;
+    table-layout: fixed;
+}
+
+body 
+{
+    color: #CA9DF5;
+    background-color: #4c3b5c;
+}

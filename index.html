@@ -4,12 +4,12 @@
         <title>테스트</title>
         <script src="csvjson.js"></script>
         <script src="dashClock.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div>
-            <a id="dash_clock">나를 바꿔</a>
-            <a id="dash_clock2"></a>
+            <h id="dash_clock">나를 바꿔</h>
+            <h id="dash_clock2" />
         </div>
         <script>
             let nodes = Object.keys(timezone).map((x) => {
@@ -18,7 +18,7 @@
 
             dashClock("dash_clock", nodes);
 
-            nodes = csvjson.map((x) => dcNode(x["TZ database name"], x["TZ database name"]));
+            nodes = csvjson.map((x) => dcNode(`${x["TZ database name"]} | ${x["Country code"]}`, x["TZ database name"]));
 
             dashClock("dash_clock2", nodes);
         </script>

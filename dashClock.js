@@ -1,10 +1,11 @@
 // add necessary timezones here
 const timezone = {
-    zulu: "zulu",
-    eastern: "America/New_York",
-    new_york: "America/New_York",
-    afghanistan: "Asia/Kabul",
-    kabul: "Asia/Kabul",
+    "Zulu": "zulu",
+    "Boston": "America/New_York",
+    "New York": "America/New_York",
+    "Afganistan": "Asia/Kabul",
+    "Italy": "cet",
+    "평양": "Asia/Pyongyang",
     bad: "bad",//test fail on purpose
 };
 
@@ -44,7 +45,7 @@ function timeFromZone(arg) {
 function updateClocks() {
     let clocks = document.getElementsByClassName("clock_cell");
 
-    // no idea why this works, js is weird man
+    // '[]' is used here as slang for 'Array.prototype'. Allows the calling of array functions on non-array collections
     [].forEach.call(clocks, (x) => {
         x.innerHTML = timeFromZone(x.dataset.timezone);
     })
@@ -59,8 +60,8 @@ function dashClock(elementID, nodes) {
     let title_row = document.createElement("tr");
     let clock_row = document.createElement("tr");
 
-    title_row.id = "title_row";
-    clock_row.id = "clock_row";
+    title_row.className = "title_row";
+    clock_row.className = "clock_row";
 
     nodes.forEach((x) => {
         x.time = timeFromZone(x.timezone);
@@ -69,6 +70,7 @@ function dashClock(elementID, nodes) {
         let clock_cell = document.createElement("td");
 
         title_cell.innerHTML = x.title;
+        title_cell.className = "title_cell"
         clock_cell.innerHTML = x.time;
         clock_cell.className = "clock_cell";
         clock_cell.dataset.timezone = x.timezone;
