@@ -18,9 +18,9 @@
                 return dcNode(x, timezone[x]);
             });
 
-            dashClock("dash_clock", nodes, 250);
-            dashClock("dash_clock2", nodes, 500);
-            dashClock("dash_clock3", nodes, 750);
+            dashClock("dash_clock", nodes, 750);
+            dashClock("dash_clock2", nodes, 200);
+            dashClock("dash_clock3", nodes, 650);
             dashClock("dash_clock4", nodes, 1000);
 
             nodes = csvjson.map((x) => dcNode(`${x["TZ database name"]} | ${x["Country code"]}`, x["TZ database name"]));

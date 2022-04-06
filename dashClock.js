@@ -42,8 +42,8 @@ function timeFromZone(arg) {
 }
 
 // function to update the clocks. use with the setInterval function
-function updateClocks() {
-    let clocks = document.getElementsByClassName("clock_cell");
+function updateClocks(eid) {
+    let clocks = document.getElementsByClassName("clock_cell_" + eid);
 
     // '[]' is used here as slang for 'Array.prototype'. Allows the calling of array functions on non-array collections
     [].forEach.call(clocks, (x) => {
@@ -74,7 +74,7 @@ function dashClock(elementID, nodes, interval) {
         title_cell.innerHTML = x.title;
         title_cell.className = "title_cell"
         clock_cell.innerHTML = x.time;
-        clock_cell.className = "clock_cell";
+        clock_cell.className = "clock_cell_" + elementID;
         clock_cell.dataset.timezone = x.timezone;
 
         title_row.appendChild(title_cell);
@@ -88,5 +88,5 @@ function dashClock(elementID, nodes, interval) {
 
     anchor.parentNode.replaceChild(table, anchor);
 
-    setInterval(() => updateClocks(), interval);
+    setInterval(() => updateClocks(elementID), interval);
 }
