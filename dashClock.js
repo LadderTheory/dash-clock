@@ -51,8 +51,10 @@ function updateClocks() {
     })
 }
 
-// replaces an existing element(elementID) with a table. nodes is an array containing timezone data formatted with the dcNode function
-function dashClock(elementID, nodes) {
+// replaces an existing element(elementID) with a table
+// nodes is an array containing timezone data formatted with the dcNode function
+// interval is the amount of time in milliseconds between each update
+function dashClock(elementID, nodes, interval) {
     let table = document.createElement("table");
     
     table.className = "dashClock";
@@ -86,5 +88,5 @@ function dashClock(elementID, nodes) {
 
     anchor.parentNode.replaceChild(table, anchor);
 
-    setInterval(() => updateClocks(), 1000);
+    setInterval(() => updateClocks(), interval);
 }
